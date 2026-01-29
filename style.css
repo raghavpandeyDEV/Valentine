@@ -1,0 +1,394 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Center Card */
+.container {
+  background: white;
+  padding: 32px 36px;
+  border-radius: 22px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  z-index: 10;
+}
+
+h1 {
+  color: #ff4d6d;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.no {
+  background: #e0e0e0;
+  color: #333;
+}
+
+/* ---------- CORNER IMAGES ---------- */
+
+.corner {
+  position: fixed;
+  width: 130px;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  z-index: 5;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Positions + Tilt */
+.top-left {
+  top: 22%;
+  left: 18%;
+  --r: -12deg;
+}
+
+.top-right {
+  top: 22%;
+  right: 18%;
+  --r: 12deg;
+}
+
+.bottom-left {
+  bottom: 22%;
+  left: 18%;
+  --r: 10deg;
+}
+
+.bottom-right {
+  bottom: 22%;
+  right: 18%;
+  --r: -10deg;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(var(--r));
+  }
+  50% {
+    transform: translateY(-8px) rotate(var(--r));
+  }
+  100% {
+    transform: translateY(0) rotate(var(--r));
+  }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .corner {
+    width: 90px;
+  }
+
+  .top-left,
+  .top-right {
+    top: 18%;
+  }
+
+  .bottom-left,
+  .bottom-right {
+    bottom: 18%;
+  }
+}
+
+.side-img {
+  position: fixed;
+  width: 170px;              /* BIG */
+  height: auto;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 18px 35px rgba(0,0,0,0.3);
+  z-index: 6;
+  animation: floatSide 3.5s ease-in-out infinite;
+}
+
+
+.left-img {
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%) rotate(-12deg);
+}
+
+.right-img {
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%) rotate(12deg);
+}
+
+.left-img { --r: -12deg; }
+.right-img { --r: 12deg; }
+
+@media (max-width: 768px) {
+  .side-img {
+    width: 110px;
+  }
+
+  .left-img {
+    left: 5%;
+  }
+
+  .right-img {
+    right: 5%;
+  }
+}
+
+.sur-img {
+  position: fixed;
+  width: 130px;
+  height: auto;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  z-index: 6;
+  animation: floatSur 4s ease-in-out infinite;
+   background: white;
+  padding: 6px 6px 14px 6px;
+}
+
+.sur-img::after {
+  content: "💗";
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.top { top: 12%; }
+
+.t1 { left: 30%; --r: -12deg; }
+.t2 { left: 45%; --r: 0deg; }
+.t3 { left: 60%; --r: 12deg; }
+
+.right { right: 12%; }
+
+.r1 { top: 40%; --r: 10deg; }
+.r2 { top: 58%; --r: 14deg; }
+
+.bottom {
+  bottom: 12%;
+  left: 45%;
+  --r: 6deg;
+}
+
+@keyframes floatSur {
+  0% {
+    transform: rotate(var(--r)) translateY(0);
+  }
+  50% {
+    transform: rotate(var(--r)) translateY(-10px);
+  }
+  100% {
+    transform: rotate(var(--r)) translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .sur-img {
+    width: 90px;
+  }
+
+  .left { left: 4%; }
+  .right { right: 4%; }
+
+  .top { top: 8%; }
+  .bottom { bottom: 8%; }
+}
+
+
+
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ================= CENTER CARD ================= */
+
+.container {
+  background: white;
+  padding: 36px 40px;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 420px;
+  z-index: 10;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.28);
+  animation: cardPulse 3s ease-in-out infinite;
+}
+
+@keyframes cardPulse {
+  0% {
+    box-shadow: 0 30px 60px rgba(0,0,0,0.28);
+  }
+  50% {
+    box-shadow: 0 40px 80px rgba(255,77,109,0.45);
+  }
+  100% {
+    box-shadow: 0 30px 60px rgba(0,0,0,0.28);
+  }
+}
+
+h1 {
+  color: #ff4d6d;
+  margin-bottom: 18px;
+  font-size: 1.9rem;
+}
+
+/* ================= SURROUND IMAGES ================= */
+
+.sur-img {
+  position: fixed;
+  width: 145px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  z-index: 6;
+  box-shadow: 0 22px 45px rgba(0,0,0,0.35);
+  animation: floatStrong 4s ease-in-out infinite;
+}
+
+/* ---------------- POSITIONS ---------------- */
+
+/* TOP */
+.top { top: 12%; }
+
+.t1 { left: 28%; --r: -14deg; }
+.t2 { left: 45%; --r: 0deg; }
+.t3 { left: 62%; --r: 14deg; }
+
+/* LEFT */
+.left { left: 10%; }
+
+.l1 { top: 38%; --r: -16deg; }
+.l2 { top: 58%; --r: -12deg; }
+
+/* RIGHT */
+.right { right: 10%; }
+
+.r1 { top: 38%; --r: 16deg; }
+.r2 { top: 58%; --r: 12deg; }
+
+/* BOTTOM */
+.bottom {
+  bottom: 12%;
+  left: 45%;
+  --r: 6deg;
+}
+
+/* ================= STRONG FLOAT ANIMATION ================= */
+
+@keyframes floatStrong {
+  0% {
+    transform: rotate(var(--r)) translateY(0) translateX(0);
+  }
+  25% {
+    transform: rotate(calc(var(--r) + 2deg)) translateY(-18px) translateX(4px);
+  }
+  50% {
+    transform: rotate(var(--r)) translateY(-30px) translateX(-4px);
+  }
+  75% {
+    transform: rotate(calc(var(--r) - 2deg)) translateY(-18px) translateX(2px);
+  }
+  100% {
+    transform: rotate(var(--r)) translateY(0) translateX(0);
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .sur-img {
+    width: 95px;
+  }
+
+  .left { left: 4%; }
+  .right { right: 4%; }
+
+  .top { top: 7%; }
+  .bottom { bottom: 7%; }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
+.heart {
+  position: fixed;
+  bottom: -40px;
+  font-size: 18px;
+  animation: heartFloat 8s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes heartFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.6);
+    opacity: 0;
+  }
+}
+
