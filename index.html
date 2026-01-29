@@ -20,5 +20,48 @@
 <img src="a3.jpeg" class="corner bottom-left" alt="corner image">
 <img src="a4.jpeg" class="corner bottom-right" alt="corner image">
 
+<div class="top-hearts">💗 💕 💖</div>
+
+<div class="signature">
+  <p>— from someone who adores you
+    (Raghu) 💞</p>
+</div>
+
+
+<!-- Confetti Library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+  function launchConfetti() {
+    const duration = 4 * 1000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+      confetti({
+        particleCount: 8,
+        angle: 60,
+        spread: 80,
+        origin: { x: 0 }
+      });
+
+      confetti({
+        particleCount: 8,
+        angle: 120,
+        spread: 80,
+        origin: { x: 1 }
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  }
+
+  // Fire crackers automatically on YES page
+  launchConfetti();
+</script>
+
+
+
 </body>
 </html>
